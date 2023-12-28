@@ -9,11 +9,19 @@
 会影响FMA指令的生成。
 在GEM5上，我们同样观察到了性能下降（8%），因此我的第一反应是这是由于FMA导致的。
 
-## 分析所需数据下载
+## 分析所需数据和脚本
 
-样例数据下载：
+样例数据获取：
+- 公网链接：https://smailnjueducn-my.sharepoint.com/personal/shinezyy_smail_nju_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fshinezyy%5Fsmail%5Fnju%5Fedu%5Fcn%2FDocuments%2Fperf%2Danalysis%2Dtutor%2D20231227&ga=1
+- BOSC 内部路径：/nfs-nvme/home/share/zyy/perf-analysis-tutor-20231227
 
 我们假设数据下载目录是 `tutor_top`
+
+拷贝数据分析所用脚本：
+``` Bash
+git clone https://github.com/shinezyy/gem5_data_proc.git -b tutor-20231228
+```
+将脚本根本根目录加入到PATH
 
 ## 分析过程
 
