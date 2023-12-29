@@ -16,12 +16,19 @@
 - BOSC 内部路径：/nfs-nvme/home/share/zyy/perf-analysis-tutor-20231227
 
 我们假设数据下载目录是 `tutor_top`
+``` Bash
+export tutor_top=/nfs-nvme/home/share/zyy/perf-analysis-tutor-20231227
+```
 
 拷贝数据分析所用脚本：
 ``` Bash
 git clone https://github.com/shinezyy/gem5_data_proc.git -b tutor-20231228
 ```
 将脚本根本根目录加入到PATH
+``` Bash
+cd gem5_data_proc
+export PATH=$PATH:`pwd`
+```
 
 ## 分析过程
 
@@ -29,6 +36,7 @@ git clone https://github.com/shinezyy/gem5_data_proc.git -b tutor-20231228
 进行了topdown 分析。
 我们在 `$tutor_top` 目录分别执行如下命令来得到RTL和GEM5的topdown数据：
 ``` Bash
+cd $tutor_top
 batch.py -s . --cache -X -F New-gcc-12-o3-jemalloc-bwaves-max-weighted-point-XS-RTL -t
 ```
 
